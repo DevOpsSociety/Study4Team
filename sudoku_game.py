@@ -38,12 +38,16 @@ def solve_sudoku(puzzle):
     if row is None:
         return True
     
-    for guess in range(1, 10):
+    numbers = list(range(1,10))
+    random.shuffle(numbers)
+    
+    for guess in numbers:
         if is_valid(puzzle, guess, row, col):
+            puzzle[row][col]= guess
             if solve_sudoku(puzzle):
                 return True
         
-        puzzle[row][col] = -1
+            puzzle[row][col] = -1
     
     return False
 
