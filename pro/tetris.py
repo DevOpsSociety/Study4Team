@@ -99,8 +99,8 @@ def clone_block(block):
     new_block = Block()
     new_block.shape = [row[:] for row in block.shape]
     new_block.color = block.color
-    new_block.x = block.x
-    new_block.y = block.y
+    new_block.x = 3
+    new_block.y = 0
     return new_block
 
 def hard_drop(block, grid):
